@@ -129,7 +129,7 @@ int main()
 
 
     cout << "Task 3" << endl;
-    /*
+    
     int len3, a;
     cout << "Enter length vector: " << endl;
     cin >> len3;
@@ -165,6 +165,6 @@ int main()
     }
     cout << "Sum elements of yours vectors is vector: " << endl;
     cout << vec4 + vec5;
-    */
+    
     return 0;
 }
