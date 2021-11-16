@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#import <random>
+#include <random>
 
 using namespace std;
 
@@ -55,6 +55,16 @@ void print(vector<int> const& vec){
     cout << endl;
 }
 
+ostream &operator <<(ostream &os, const vector<int> &c)
+{
+    for (int i = 0; i < c.size(); i++)
+    {
+        os << c[i];
+        os << " ";
+    }
+    return os;
+}
+
 vector<int> operator + (vector<int> &vec1,vector<int> &vec2){
     if (vec1.size() < vec2.size()){
         for (int i = vec1.size() - 1 ; i < vec2.size(); i++){
@@ -78,28 +88,20 @@ int main()
 {
     random_device rd;
     cout << "Task 1" << endl;
-    /*
+
     int len;
-    char s;
+    char s = ' ';
     cout << "Enter length of vec: " << endl;
     cin >> len;
-    cout << "Enter - if vector of vec is minus" << endl;
-    cin >> s;
     cout << endl;
-
     vector<int> vec(len);
     for (int i = 0; i < len; i++){
         vec[i] = rd() % 1000;
     }
-
-
-
     oddEvensort(vec, s);
+    cout << vec;
+    cout << endl;
 
-    for (int n: vec){
-        cout << n << " ";
-    }
-    */
     cout << "Task 2" << endl;
 
     int len1, len2;
@@ -146,8 +148,6 @@ int main()
     oddEvensort(vec3, qs);
     cout << "Your vec after sort: " << endl;
     print(vec3);
-
-
     cout << "Enter length of your vectors:" << endl;
     int len4, c, b;
     cin >> len4;
@@ -164,7 +164,7 @@ int main()
         vec5.push_back(c);
     }
     cout << "Sum elements of yours vectors is vector: " << endl;
-    print(vec4 + vec5);
+    cout << vec4 + vec5;
     */
     return 0;
 }
