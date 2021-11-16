@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void oddEvensort(vector<int> &m, char s)
+void oddEvensort(vector<int> &m, char s = ' ')
 {
     if (s == '-')
     {
@@ -90,7 +90,7 @@ int main()
     cout << "Task 1" << endl;
 
     int len;
-    char s = ' ';
+    char s;
     cout << "Enter length of vec: " << endl;
     cin >> len;
     cout << endl;
@@ -98,7 +98,7 @@ int main()
     for (int i = 0; i < len; i++){
         vec[i] = rd() % 1000;
     }
-    oddEvensort(vec, s);
+    oddEvensort(vec);
     cout << vec;
     cout << endl;
 
@@ -121,11 +121,11 @@ int main()
     for (int i = 0; i < len2; i++){
         vec2[i] = rd() % 1000;
     }
-    print(vec1);
-    print(vec2);
+    cout << vec1;
+    cout << vec2;
     vector<int> anotherVec(vec1 + vec2);
     anotherVec.erase(anotherVec.end() - 1);
-    print(anotherVec);
+    cout << anotherVec;
 
 
     cout << "Task 3" << endl;
@@ -141,13 +141,13 @@ int main()
         vec3.push_back(a);
     }
     cout << "Your vec before sort: " << endl;
-    print(vec3);
+    cout << vec3;
     cout << "Enter - if vector of youe vec is minus" << endl;
     char qs;
     cin >> qs;
     oddEvensort(vec3, qs);
     cout << "Your vec after sort: " << endl;
-    print(vec3);
+    cout << vec3;
     cout << "Enter length of your vectors:" << endl;
     int len4, c, b;
     cin >> len4;
